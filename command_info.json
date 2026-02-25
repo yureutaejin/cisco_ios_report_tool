@@ -1,0 +1,154 @@
+{
+  "COMMAND_INFO": {
+    "show version": {
+      "description": "Check device model, IOS version, uptime, and reload reason",
+      "title": "System Information",
+      "report_desc": "Basic device information and operational status"
+    },
+    "show logging": {
+      "description": "View complete system logs",
+      "title": "System Logs",
+      "report_desc": "Complete system log entries"
+    },
+    "show processes cpu sorted": {
+      "description": "Check CPU usage and top processes",
+      "title": "CPU Usage",
+      "report_desc": "System processor load status"
+    },
+    "show processes memory sorted": {
+      "description": "Check memory usage and top processes",
+      "title": "Memory Usage",
+      "report_desc": "System RAM usage status"
+    },
+    "show environment all": {
+      "description": "Check temperature, fan, and power status",
+      "title": "Environmental Sensors",
+      "report_desc": "Temperature, fan, and power status"
+    },
+    "show platform resources": {
+      "description": "Platform resources (DRAM, Flash) usage",
+      "title": "Platform Resources",
+      "report_desc": "DRAM and Flash storage usage"
+    },
+    "show interfaces counters errors": {
+      "description": "Interface error counters",
+      "title": "Interface Errors",
+      "report_desc": "Communication error counters per port"
+    },
+    "show logging onboard switch 1 uptime detail": {
+      "description": "OBFL - Reboot history (persists across power cycles)",
+      "title": "OBFL Reboot History",
+      "report_desc": "Onboard Failure Logging - Reboot records persisting across power cycles"
+    },
+    "show logging onboard switch 1 message": {
+      "description": "OBFL - Hardware error messages",
+      "title": "OBFL Hardware Errors",
+      "report_desc": "Error messages detected at hardware level"
+    },
+    "show logging onboard switch 1 temperature": {
+      "description": "OBFL - Temperature history",
+      "title": "OBFL Temperature History",
+      "report_desc": "Maximum/minimum temperature records over time"
+    },
+    "show logging onboard switch 1 voltage": {
+      "description": "OBFL - Voltage anomaly history",
+      "title": "OBFL Voltage History",
+      "report_desc": "Power voltage anomaly records"
+    },
+    "show reload": {
+      "description": "Check scheduled reload",
+      "title": "Scheduled Reload",
+      "report_desc": "Administrator-scheduled reload schedule"
+    },
+    "show logging | include error|crash|fail|down": {
+      "description": "Filter error-related messages from logs",
+      "title": "Error Log Summary",
+      "report_desc": "Log messages containing error keywords"
+    },
+    "show ip route summary": {
+      "description": "Routing table summary",
+      "title": "Routing Table",
+      "report_desc": "IP routing table summary"
+    },
+    "show arp summary": {
+      "description": "ARP table summary",
+      "title": "ARP Table",
+      "report_desc": "IP-MAC address mapping table"
+    },
+    "show mac address-table count": {
+      "description": "MAC address table usage",
+      "title": "MAC Address Table",
+      "report_desc": "MAC address learning table (for switching)"
+    },
+    "show interfaces status": {
+      "description": "Port status (connected/notconnect/err-disabled)",
+      "title": "Interface Status",
+      "report_desc": "Connection status of all ports"
+    },
+    "show interfaces description": {
+      "description": "Interface descriptions",
+      "title": "Interface Descriptions",
+      "report_desc": "Purpose and connection info for each port"
+    },
+    "show platform hardware fed switch active fwd-asic resource tcam utilization": {
+      "description": "TCAM resource usage",
+      "title": "TCAM Usage",
+      "report_desc": "TCAM (hardware table) resource usage"
+    },
+    "show platform software status control-processor brief": {
+      "description": "Control plane processor status",
+      "title": "Control Processor",
+      "report_desc": "Control plane processor status"
+    },
+    "show inventory": {
+      "description": "Hardware inventory (model, serial number)",
+      "title": "Hardware Inventory",
+      "report_desc": "Device model and serial number"
+    },
+    "show redundancy": {
+      "description": "Redundancy status (stack, dual supervisor, etc.)",
+      "title": "Redundancy Status",
+      "report_desc": "System redundancy (stack/dual supervisor) status"
+    },
+    "show switch": {
+      "description": "Stack member information",
+      "title": "Switch Stack",
+      "report_desc": "Stack configuration member information"
+    },
+    "show switch detail": {
+      "description": "Stack detailed information",
+      "title": "Switch Stack Detail",
+      "report_desc": "Detailed stack member information"
+    },
+    "dir crashinfo:": {
+      "description": "Check crash dump files",
+      "title": "Crash Dumps",
+      "report_desc": "Dump files generated on system crash"
+    },
+    "show stacks": {
+      "description": "Process stack traces (for debugging)",
+      "title": "Process Stacks",
+      "report_desc": "Process stack traces (for debugging)"
+    },
+    "show core": {
+      "description": "Check core dump files",
+      "title": "Core Dumps",
+      "report_desc": "Memory dumps generated on process crash"
+    },
+    "show processes cpu history": {
+      "description": "CPU usage history graph",
+      "title": "CPU History",
+      "report_desc": "CPU usage graph over time"
+    },
+    "show platform software fed switch active punt cpuq all": {
+      "description": "CPU punt packet queue status",
+      "title": "CPU Punt Queue",
+      "report_desc": "Packet queue status punted to CPU"
+    },
+    "show logging onboard switch 1 uptime": {
+      "description": "OBFL - Reboot history summary",
+      "title": "OBFL Reboot Summary",
+      "report_desc": "Summary of reboot events"
+    }
+  }
+}
