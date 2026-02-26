@@ -24,9 +24,10 @@ def main():
         collected_data = collector.collect_all()
         collector.save_raw_data()
         collector.disconnect()
-        analyzer = CiscoAnalyzer(collected_data, command_info=COMMAND_INFO['COMMAND_INFO'])
+        # TODO: Implement analyzer and report generation
+        # analyzer = CiscoAnalyzer(collected_data, command_info=COMMAND_INFO['COMMAND_INFO'])
         
-        analyzer.generate_markdown_report(analyzer.analyze_all())
+        # analyzer.generate_markdown_report(analyzer.analyze_all())
 
 if __name__ == '__main__':
     try:

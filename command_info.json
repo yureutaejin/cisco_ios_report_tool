@@ -1,5 +1,10 @@
 {
   "COMMAND_INFO": {
+    "show tech-support": {
+      "description": "To display general information about the router when reporting a problem",
+      "title": "Tech Support",
+      "report_desc": "Comprehensive system information for troubleshooting"
+    },
     "show version": {
       "description": "Check device model, IOS version, uptime, and reload reason",
       "title": "System Information",

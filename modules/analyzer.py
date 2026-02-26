@@ -334,28 +334,48 @@ class CiscoAnalyzer:
                             pass
         
         # Fan status
-        fan_lines = [line for line in section.split('\n') if 'FAN' in line.upper() and 'Speed' in line]
-        for line in fan_lines:
-            if 'OK' in line or 'Normal' in line:
-                result['items'].append({
-                    'name': 'Fan Status',
-                    'value': 'OK',
-                    'description': 'Cooling fan operating normally',
-                    'status': 'normal'
-                })
-            else:
-                result['items'].append({
-                    'name': 'Fan Status',
-                    'value': 'ERROR',
-                    'description': 'Fan problem detected',
-                    'status': 'critical'
-                })
-                self.findings['critical'].append({
-                    'category': 'Environment',
-                    'issue': 'Fan error detected',
-                    'impact': 'Risk of overheating and equipment shutdown due to poor cooling',
-                    'action': 'Replace fan, request TAC support'
-                })
+        has_fan_error = False
+        fan_ok_count = 0
+        
+        # Check individual fan status lines (e.g., "  1  	  1	13760 	  OK")
+        for line in section.split('\n'):
+            line_upper = line.upper()
+            # Look for lines with FAN status (contain numbers and OK/FAIL/ERROR)
+            if 'FAN' in line_upper and 'Speed' in line_upper and 'State' in line_upper:
+                continue  # Skip header line
+            
+            # Check fan status lines like "  1      1   13760    OK"
+            if re.search(r'\d+\s+OK\s*$', line.strip()):
+                fan_ok_count += 1
+            elif re.search(r'\d+\s+(FAIL|ERROR|NOT OK)', line.strip()):
+                has_fan_error = True
+            
+            # Check PS fan status lines like "FAN PS-1 is OK"
+            if re.match(r'FAN\s+PS-\d+\s+is\s+OK', line.strip()):
+                fan_ok_count += 1
+            elif re.match(r'FAN\s+PS-\d+\s+is\s+(FAIL|ERROR|NOT OK)', line.strip()):
+                has_fan_error = True
+        
+        if fan_ok_count > 0 and not has_fan_error:
+            result['items'].append({
+                'name': 'Fan Status',
+                'value': 'OK',
+                'description': f'{fan_ok_count} fans operating normally',
+                'status': 'normal'
+            })
+        elif has_fan_error:
+            result['items'].append({
+                'name': 'Fan Status',
+                'value': 'ERROR',
+                'description': 'Fan problem detected',
+                'status': 'critical'
+            })
+            self.findings['critical'].append({
+                'category': 'Environment',
+                'issue': 'Fan error detected',
+                'impact': 'Risk of overheating and equipment shutdown due to poor cooling',
+                'action': 'Replace fan, request TAC support'
+            })
         
         # Power supply
         ps_lines = [line for line in section.split('\n') if line.strip().startswith('PS') and 'Supply' in line]

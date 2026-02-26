@@ -7,7 +7,7 @@ Collects data with raw text output and converts it into a Markdown report with a
 
 - ✅ **Automated Data Collection**: Executes 30+ diagnostic commands automatically
 - 📊 **Detailed Analysis**: Includes descriptions and interpretations for all collected items
-- 📝 **Markdown Report**: Generates a readable diagnostic report
+- 📝 **Markdown Report**: (Still work in progress) Generates a readable diagnostic report
 - 🔴 **Issue Detection**: Automatically classifies issues as Critical/Warning
 - 💡 **Recommended Actions**: Provides specific solutions for each issue
 
@@ -32,7 +32,7 @@ cisco_ios_report_tool/
 ├── README.md               # This file
 ├── cisco_diagnostic/       # Diagnostic module
 │   ├── collector.py        # Data collection logic
-│   └── analyzer.py         # Data analysis and report generation
+│   └── analyzer.py         # (Still work in progress) Data analysis and report generation
 └── log/                    # Output directory
     ├── cisco_collected_*.txt       # Raw command outputs
     └── cisco_diagnostic_report_*.md # Analysis reports
